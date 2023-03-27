@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.post('/', (req, res) => {
+/**app.post('/', (req, res) => {
   const options = req.body
   const data = `${options.name}\n${options.address}`
 
@@ -20,7 +20,7 @@ app.post('/', (req, res) => {
     if (err) throw err;
     res.render('index', { qrCode: url, options: options })
   })
-})
+})**/
 
 app.listen(port, () => {
   console.log(`Express app listening on port ${port}.`)

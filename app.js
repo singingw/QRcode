@@ -1,10 +1,12 @@
 const express = require('express')
-const exphbs = require('express-handlebars')
 const session = require('express-session')
+const exphbs = require('express-handlebars')
 const routes = require('./routes')
+const usePassport = require('./config/passport')
+require('./config/mongoose')
+
 const app = express()
 const port = process.env.PORT || 8080
-require('./config/mongoose')
 
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -16,6 +18,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
+usePassport(app)
 app.use(routes)
 
 app.listen(port, () => {

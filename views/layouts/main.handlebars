@@ -15,10 +15,9 @@
 
     <div class="container-fluid">
       <a class="navbar-brand" href="#">data matrix 產生器</a>
+      {{#if isAuthenticated}}
       <a href="/users/logout" class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
-      <!--{{#if isAuthenticated}}
-      <a href="/users/logout" class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
-      {{/if}}->
+      {{/if}}
     </div>
 
   </nav>
